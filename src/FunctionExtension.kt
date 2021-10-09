@@ -9,12 +9,19 @@ fun main(args: Array<String>) {
 
     val numero = 4
     numero.methodExtension()
+
+    val numeroNull: Int? = null
+    numeroNull.nullableMethodExtension()
 }
 
 fun Int.methodExtension() {
-    println("This number is $this")
+    println("El numero es $this")
 }
 
-fun Int?.nullableMmethodExtension() {
-    println("This nullable number is $this")
+fun Int?.nullableMethodExtension() {
+    if (this == null) {
+        println("Numero nulo!")
+    } else {
+        println("El numero nuleable es $this")
+    }
 }
